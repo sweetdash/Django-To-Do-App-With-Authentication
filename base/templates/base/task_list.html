@@ -8,11 +8,19 @@
         <th>
             View
         </th>
+        <th>
+            Edit
+        </th>
+        <th>
+            Delete
+        </th>
     </tr>
     {% for task in tasks %}
     <tr>
         <td>{{task.title}}</td>
         <td><a href="{% url 'taskdetail' task.id %}">View</a></td>
+        <td><a href="{%url 'task-update' task.id%}">Edit</a></td>
+        <td><a href="{%url 'task-delete' task.id%}">Delete</a></td>
     </tr>
     {% empty %}
     <h3>No items found in the list</h3>
