@@ -1,4 +1,6 @@
 <h1>HEllo world. This was written using class based view</h1>
+{% if request.user.is_authenticated %}
+<p>{{request.user}}</p>
 <a href="{% url 'task-create' %}">Add Task</a>
 <table>
     <tr>
