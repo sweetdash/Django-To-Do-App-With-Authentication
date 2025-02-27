@@ -33,9 +33,10 @@ class TaskDelete(DeleteView):
     model=Task
     template_name='base/task_delete.html'
     success_url=reverse_lazy('tasks')
-class Login_app(LoginView):
+class CustomeLoginView(LoginView):
     template_name='base/login.html'
-    redirect_authenticated_user=True
+    fields='__all__'
+    redirect_authenticated_user=True #redirect logged in user to home
     
     def get_success_url(self):
         return reverse_lazy('tasks')
